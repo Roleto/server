@@ -1,0 +1,33 @@
+﻿@using HitelCalc.Models
+@model HitelModel
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h1>Hitelkalkulátor</h1>
+    @Html.ValidationSummary()
+    <form method="post" action="/home/process">
+        <label>Név</label>
+        <br/>
+        <input type="text" name="nev" value="@Model?.Nev" required/>
+        <br/>
+        <label>Összeg</label>
+        <br/>
+        <input type="number" name="pv" value="@Model?.PV" min="100000" required />
+        <br/>
+        <label>Futamidő</label>
+        <br/>
+        <input type="text" name="t" value="@Model?.T" min="3" max="30" required />
+        <br/>
+        <label>Kamat</label>
+        <br/>
+        <input type="text" name="r" value="@Model?.R" min="5" max="40" required />
+        <br/>
+        <input type="submit" value="Kiszámolás"/>
+    </form>
+</body>
+</html>
+

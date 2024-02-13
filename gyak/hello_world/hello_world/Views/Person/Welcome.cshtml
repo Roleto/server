@@ -1,0 +1,25 @@
+﻿@model object[]
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+@if((int)Model[1] < 50)
+{
+    @:<body bgcolor="yellow">
+}
+else
+{
+    @:<body bgcolor="orange">
+    
+}
+<h1>Welcome, @Model[0]! Your Age is: @Model[1]!</h1>
+@for (int i = 0; i < (int)Model[1]; i++)
+{
+    @:<img src="../candle.png" />
+}
+</>
+</html>
+
